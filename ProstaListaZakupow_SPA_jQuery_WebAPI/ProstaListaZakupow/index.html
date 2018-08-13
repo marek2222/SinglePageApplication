@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script src="Scripts/app.js"></script>
+</head>
+<body>
+    <div id="divDodawanie">
+        <h1>Prosta lista zakupów</h1>
+        <input type="text" id="listeZakupow_nazwa" placeholder="Nowa Lista" />
+        <button onclick="utworzListeZakupow()">Utworz</button>
+    </div>
+    <div id="divPrzegladanie" style="display:none;">
+        <h1 id="listaZakupow_tytul">Nowa Lista</h1>
+        <input id="nowaPozycja_nazwa" type="text" placeholder="Nowa pozycja" />
+        <button onclick="dodajPozycje()">Dodaj</button>
+        <ul id="listaZakupow">
+            <li>Sałatki<button>D</button><button>C</button></li>
+            <li>Mleko<button>D</button><button>C</button></li>
+            <li>Pomidory<button>D</button><button>C</button></li>
+        </ul>
+    </div>
+</body>
+</html>
