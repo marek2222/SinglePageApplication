@@ -9,12 +9,14 @@
 </head>
 <body>
   <div id="vue-app">
-    <h1>Keybord Events</h1>
+    <h1>Two way databinding</h1>
     <label>Name:</label>
-    <input type="text" v-on:keyup.enter="logName"/>
+    <input type="text" v-model="name "/>
+    <span>{{ name }}</span>
+    <br>
     <label>Age:</label>
-    <input type="text" v-on:keyup.enter="logAge"/>
-    <p>Reakcja przy zwolnieniu klawisza. Dołączono enter</p>
+    <input type="text" v-model="age"/>
+    <span>{{ age }}</span>
   </div>
   
   <script src="app.js"></script>
