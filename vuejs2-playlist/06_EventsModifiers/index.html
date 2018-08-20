@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VUEJS2-PLAYLIST</title>
+  <link href="styles.css" rel="stylesheet">
+  <script src="https://unpkg.com/vue"></script>    
+</head>
+<body>
+  <div id="vue-app">
+    <h2>Event Modifiers</h2>
+    Vue provides event modifiers for v-on. Recall that modifiers are directive postfixes denoted by a dot.
+    <p>
+      .stop<br>
+      .prevent<br>
+      .capture<br>
+      .self<br>
+      .once<br>
+      .passive
+    </p>
+    <button v-on:click.stop="add(1)">Add a year(stop)</button>
+    <button v-on:click.prevent="add(1)">Add a year(prevent)</button>
+    <button v-on:click.capture="add(1)">Add a year(capture)</button>
+    <button v-on:click.self="add(1)">Add a year(self)</button>
+    <button v-on:click.once="add(1)">Add a year(once)</button>
+    <button v-on:click.passive="add(1)">Add a year(passive)</button>
+    <button v-on:click="subtract(1)">Subtract a year</button>
+    <button v-on:dblclick="add(10)">Add 10 years</button>
+    <button v-on:dblclick="subtract(10)">Subtract 10 years</button>
+    <p>My age is {{age}}</p>
+    <div id="canvas" v-on:mousemove="updateXY">{{x}}, {{y}}</div>
+    <a v-on:click="click" href="https://www.thenetninja.co.uk/">The Net Ninja</a>
+  </div>
+   
+  <script src="app.js"></script>
+</body>
+</html>
