@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VUEJS2-PLAYLIST</title>
+  <link href="styles.css" rel="stylesheet">
+  <script src="https://unpkg.com/vue"></script>    
+</head>
+<body>
+  <div id="vue-app">
+    <h1>Dynamic CSS</h1>
+    <h2>Example 2</h2>
+    <button v-on:click="nearby=!nearby">Toggle nearby</button>
+    <button v-on:click="available=!available">Toggle available</button>
+    <div v-bind:class="compClasses">
+      <span>Ryu</span>
+    </div>
+  </div>
+  
+  <script src="app.js"></script>
+</body>
+</html>
