@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VUEJS2-PLAYLIST</title>
+  <link href="styles.css" rel="stylesheet">
+  <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+
+  <h1>Multiple Vue instances</h1>
+
+  <div id="vue-app-one">
+    <h2>{{tytul}}</h2>
+    <p>{{powitanie}}</p>
+  </div>
+
+  <div id="vue-app-two">
+    <h2>{{tytul}}</h2>
+    <p>{{powitanie}}</p>
+    <button @click="zmienTytul">Zmien tytuł </button>
+  </div>
+
+<script src="app.js"></script>
+</body>
+
+</html>
