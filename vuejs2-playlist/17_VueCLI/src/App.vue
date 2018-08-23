@@ -1,50 +1,25 @@
-<template>
-<div>
-  <h1>{{ tytul }}</h1>
-  <p>{{ powitanie() }}</p>
-</div>
+ <template>
+  <div>
+    <h1>{{ tytul }}</h1>
+    <ninjas></ninjas>
+  </div>
 </template>
 
 <script>
+import Ninjas from './Ninjas.vue'
+
 export default {
-  data() {
+ components: {
+   'ninjas': Ninjas
+ },
+ data() {
     return {
-      tytul: 'Twoja pierwszy plik Vue, ouuu!'
-    }
-  },
-  methods: {
-    powitanie: function(){
-      return 'Hey kowboju!';
+      tytul: 'Ninja App'
     }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>
