@@ -1,32 +1,34 @@
- <template>
-  <div id="osoby ">
-    <p>{{ osoby }}</p>
-    <ul>
-      <li v-for="osoba in osoby" v-on:click="osoba.widocznosc =!  osoba.widocznosc">
-        <h2>{{ osoba.nazwa }}</h2>
-        <h3 v-show=" osoba.widocznosc">{{ osoba.specjalnosc }}</h3>
-      </li>
-    </ul>
-  </div>
-  </template>
+<template>
+    <div id="osoby ">
+        <p>{{ osoby }}</p>
+        <ul>
+        <li v-for="osoba in osoby" v-on:click="osoba.widocznosc =!  osoba.widocznosc">
+            <h2>{{ osoba.nazwa }}</h2>
+            <h3 v-show=" osoba.widocznosc">{{ osoba.specjalnosc }}</h3>
+        </li>
+        </ul>
+        <button v-on:click="usunOsobe">Usun osobę </button>
+    </div>
+</template>
 
 <script>
 export default {
-  // props: [' osoby'],
-props: {
-  osoby: {}
-},
-data() {
-    return {
-        type: Array,
-        required: true
+    props: {
+        osoby: {
+            type: Array,
+            required: true
+        }
+    },
+    data() {
+        return {
+
+        }
+    },
+    methods: {
+        usunOsobe: function () {
+			this.osoby.pop();
+      }
     }
-  }
-  // ,methods: {
-  //   test: function(){
-  //     return this.osoby;
-  //   }
-  // }
 }
 </script>
 
@@ -46,7 +48,7 @@ ul{
 }
 li{
   flex-grow: 1;
-  flex-basis: 200px;
+  flex-basis: 100px;
   text-align: center;
   padding: 30px;
   border: 1px solid #222;

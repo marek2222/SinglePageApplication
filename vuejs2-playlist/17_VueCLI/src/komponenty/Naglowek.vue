@@ -1,14 +1,23 @@
  <template>
-  <header>
-    <h1>{{ tytul }}</h1>
-  </header>
+	<header>
+		<h1 v-on:click="zmienTytul">{{ tytul }}</h1>
+	</header>
 </template>
 
 <script>
 export default {
- data() {
-    return {
-      tytul: 'Vue ninjas'
+	props: {
+		tytul: {
+			type: String
+		}
+	},
+	data() {
+		return {
+		}
+  },
+  methods: {
+    zmienTytul: function(){
+      this.tytul = 'Czarodzieje Vue (Vue Wizards)'
     }
   }
 }
@@ -16,11 +25,11 @@ export default {
 
 <style scoped>
 header{
-  background: lightgreen;
-  padding: 10px;
+	background: lightgreen;
+	padding: 10px;
 }
 h1{
-  color: #222;
-  text-align: center;
+	color: #222;
+	text-align: center;
 }
 </style>

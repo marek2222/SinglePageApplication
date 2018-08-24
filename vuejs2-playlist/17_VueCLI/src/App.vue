@@ -1,9 +1,9 @@
  <template>
-  <div>
-    <naglowek-apl></naglowek-apl>
-    <osoby-apl v-bind:osoby="osobyDane"></osoby-apl>
-    <stopka-apl></stopka-apl>
-  </div>
+    <div>
+        <naglowek-apl v-bind:tytul="tytul"></naglowek-apl>
+        <osoby-apl      v-bind:osoby="osobyDane"></osoby-apl>
+        <stopka-apl     v-bind:tytul="tytul"></stopka-apl>
+    </div>
 </template>
 
 
@@ -21,16 +21,18 @@ export default {
   data() {
     return {
       osobyDane: [
-       {nazwa: 'Jarek', specjalnosc: 'Vue komponent', widocznosc: false},
-       {nazwa: 'Darek', specjalnosc: 'Czarodziej Vue ', widocznosc: false},
-       {nazwa: 'Wiesiek', specjalnosc: 'Zdarzenie Click', widocznosc: false},
-       {nazwa: 'Stasiek', specjalnosc: 'Warunki', widocznosc: false},
-       {nazwa: 'Daniel', specjalnosc: 'Webpack', widocznosc: false},
-       {nazwa: 'Damian', specjalnosc: 'Vue undefinied', widocznosc: false}
-     ]
+        {nazwa: 'Jarek', specjalnosc: 'Vue komponent', widocznosc: false},
+        {nazwa: 'Darek', specjalnosc: 'Czarodziej Vue ', widocznosc: false},
+        {nazwa: 'Wiesiek', specjalnosc: 'Zdarzenie Click', widocznosc: false},
+        {nazwa: 'Stasiek', specjalnosc: 'Warunki', widocznosc: false},
+        {nazwa: 'Daniel', specjalnosc: 'Webpack', widocznosc: false},
+        {nazwa: 'Damian', specjalnosc: 'Vue undefinied', widocznosc: false}
+      ]
+      ,tytul: 'Osoby z Vue'
+      }
     }
   }
-}
+
 </script>
 
 <style>

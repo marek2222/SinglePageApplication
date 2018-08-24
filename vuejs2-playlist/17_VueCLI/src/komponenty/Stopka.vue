@@ -1,14 +1,19 @@
  <template>
-  <footer>
-    <p>{{ prawa }}</p>
-  </footer>
+    <footer>
+        <p>{{ prawa }}  {{ tytul }}</p>
+    </footer>
  </template>
 
 <script>
 export default {
+  props: {
+    tytul: {
+      type: String
+    }
+  },
   data() {
     return {
-      prawa: 'Prawa autorskie 2018 marek2222'
+        prawa: 'Prawa autorskie 2018'
     }
   }
 }
