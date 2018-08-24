@@ -8,9 +8,9 @@
 
 
 <script>
-import Naglowek from './komponenty/Naglowek.vue';
-import Osoby from './komponenty/Osoby.vue';
-import Stopka from './komponenty/Stopka.vue';
+import Naglowek from './components/Naglowek.vue';
+import Osoby from './components/Osoby.vue';
+import Stopka from './components/Stopka.vue';
 
 export default {
   components: {
