@@ -22,25 +22,25 @@
 </template>
 
 <script>
-//globally component
+//  locally component
+import Ninjas from './Ninjas.vue'
+
 export default {
+ components: {
+   'ninjas': Ninjas
+ },
  data() {
     return {
-      tytul: 'Ninja App - globally component'
+      tytul: 'Ninja App - locally component'
     }
   }
 }
 
-////  locally component
-// import Ninjas from './Ninjas.vue'
-
+// //globally component
 // export default {
-//  components: {
-//    'ninjas': Ninjas
-//  },
 //  data() {
 //     return {
-//       tytul: 'Ninja App - locally component'
+//       tytul: 'Ninja App - globally component'
 //     }
 //   }
 // }

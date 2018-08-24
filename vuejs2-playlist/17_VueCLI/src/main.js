@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
-import Ninjas from './Ninjas.vue'
 
+//// only for globally component
+// import Ninjas from './Ninjas.vue'
 
-Vue.component ('ninjas', Ninjas);
+// Vue.component ('ninjas', Ninjas);
 
 
 new Vue({
