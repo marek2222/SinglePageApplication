@@ -1,7 +1,7 @@
  <template>
   <div>
     <naglowek-apl></naglowek-apl>
-    <osoby-apl></osoby-apl>
+    <osoby-apl v-bind:osoby="osobyDane"></osoby-apl>
     <stopka-apl></stopka-apl>
   </div>
 </template>
@@ -9,8 +9,8 @@
 
 <script>
 import Naglowek from './komponenty/Naglowek.vue';
-import Stopka from './komponenty/Stopka.vue';
 import Osoby from './komponenty/Osoby.vue';
+import Stopka from './komponenty/Stopka.vue';
 
 export default {
   components: {
@@ -20,7 +20,14 @@ export default {
   },
   data() {
     return {
-
+      osobyDane: [
+       {nazwa: 'Jarek', specjalnosc: 'Vue komponent', widocznosc: false},
+       {nazwa: 'Darek', specjalnosc: 'Czarodziej Vue ', widocznosc: false},
+       {nazwa: 'Wiesiek', specjalnosc: 'Zdarzenie Click', widocznosc: false},
+       {nazwa: 'Stasiek', specjalnosc: 'Warunki', widocznosc: false},
+       {nazwa: 'Daniel', specjalnosc: 'Webpack', widocznosc: false},
+       {nazwa: 'Damian', specjalnosc: 'Vue undefinied', widocznosc: false}
+     ]
     }
   }
 }

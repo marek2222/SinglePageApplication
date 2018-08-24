@@ -1,5 +1,6 @@
  <template>
   <div id="osoby ">
+    <p>{{ osoby }}</p>
     <ul>
       <li v-for="osoba in osoby" v-on:click="osoba.widocznosc =!  osoba.widocznosc">
         <h2>{{ osoba.nazwa }}</h2>
@@ -11,18 +12,21 @@
 
 <script>
 export default {
-  data() {
+  // props: [' osoby'],
+props: {
+  osoby: {}
+},
+data() {
     return {
-     osoby: [
-       {nazwa: 'Jarek', specjalnosc: 'Vue komponent', widocznosc: false},
-       {nazwa: 'Darek', specjalnosc: 'Czarodziej Vue ', widocznosc: false},
-       {nazwa: 'Wiesiek', specjalnosc: 'Zdarzenie Click', widocznosc: false},
-       {nazwa: 'Stasiek', specjalnosc: 'Warunki', widocznosc: false},
-       {nazwa: 'Daniel', specjalnosc: 'Webpack', widocznosc: false},
-       {nazwa: 'Damian', specjalnosc: 'Vue undefinied', widocznosc: false}
-     ]
+        type: Array,
+        required: true
     }
   }
+  // ,methods: {
+  //   test: function(){
+  //     return this.osoby;
+  //   }
+  // }
 }
 </script>
 
@@ -42,7 +46,7 @@ ul{
 }
 li{
   flex-grow: 1;
-  flex-basis: 300px;
+  flex-basis: 200px;
   text-align: center;
   padding: 30px;
   border: 1px solid #222;
