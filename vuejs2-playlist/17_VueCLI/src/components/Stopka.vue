@@ -5,6 +5,8 @@
  </template>
 
 <script>
+import { bus } from '../main';
+
 export default {
   props: {
     tytul: {
@@ -13,8 +15,13 @@ export default {
   },
   data() {
     return {
-        prawa: 'Prawa autorskie 2018'
+      prawa: 'Prawa autorskie 2018'
     }
+  },
+  created(){
+    bus.$on('zmienionyTytul',(data)=>{
+       this.tytul = data;
+    });
   }
 }
 </script>

@@ -1,13 +1,13 @@
 <template>
     <div id="osoby ">
-        <p>{{ osoby }}</p>
+        <!-- <p>{{ osoby }}</p> -->
         <ul>
-        <li v-for="osoba in osoby" v-on:click="osoba.widocznosc =!  osoba.widocznosc">
+        <li v-for="osoba in osoby" @click="osoba.widocznosc =!  osoba.widocznosc">
             <h2>{{ osoba.nazwa }}</h2>
             <h3 v-show=" osoba.widocznosc">{{ osoba.specjalnosc }}</h3>
         </li>
         </ul>
-        <button v-on:click="usunOsobe">Usun osobę </button>
+        <button @click="usunOsobe">Usun osobę </button>
     </div>
 </template>
 

@@ -1,10 +1,12 @@
  <template>
 	<header>
-		<h1 v-on:click="zmienTytul">{{ tytul }}</h1>
+		<h1 @click="zmienTytul">{{ tytul }}</h1>
 	</header>
 </template>
 
 <script>
+import { bus } from '../main';
+
 export default {
 	props: {
 		tytul: {
@@ -19,7 +21,9 @@ export default {
   methods: {
     zmienTytul: function(){
       //this.tytul = 'Czarodzieje Vue (Vue Wizards)'
-      this.$emit('zmienTytul','Czarodzieje Vue (Vue Wizards)');
+      //this.$emit('zmienTytul','Czarodzieje Vue (Vue Wizards)');
+      this.tytul =  'Czarodzieje Vue (Vue Wizards)'
+      bus.$emit('zmienionyTytul','Czarodzieje Vue (Vue Wizards) - zmienionyTytul');
     }
   }
 }
