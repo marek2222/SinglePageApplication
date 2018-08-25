@@ -13,11 +13,13 @@ export default {
 	},
 	data() {
 		return {
+      tytul: 'Osoby Vue'
 		}
   },
   methods: {
     zmienTytul: function(){
-      this.tytul = 'Czarodzieje Vue (Vue Wizards)'
+      //this.tytul = 'Czarodzieje Vue (Vue Wizards)'
+      this.$emit('zmienTytul','Czarodzieje Vue (Vue Wizards)');
     }
   }
 }

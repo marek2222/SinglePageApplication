@@ -1,4 +1,5 @@
 {
-  "editor.fontFamily": "Arial, Arial, monospace"
- 
+  "editor.fontFamily": "Arial, Arial, monospace",
+  "editor.tabSize": 4
+  
 }

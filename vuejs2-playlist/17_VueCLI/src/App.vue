@@ -1,6 +1,6 @@
  <template>
     <div>
-        <naglowek-apl v-bind:tytul="tytul"></naglowek-apl>
+        <naglowek-apl v-bind:tytul="tytul" v-on:zmienTytul="aktualizujTytul($event)"></naglowek-apl>
         <osoby-apl      v-bind:osoby="osobyDane"></osoby-apl>
         <stopka-apl     v-bind:tytul="tytul"></stopka-apl>
     </div>
@@ -30,6 +30,11 @@ export default {
       ]
       ,tytul: 'Osoby z Vue'
       }
+    },
+    methods: {
+       aktualizujTytul: function(aktualizujTytul){
+         this.tytul = aktualizujTytul;
+       }
     }
   }
 

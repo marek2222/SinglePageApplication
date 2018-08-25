@@ -26,7 +26,7 @@ export default {
     },
     methods: {
         usunOsobe: function () {
-			this.osoby.pop();
+      this.osoby.pop();
       }
     }
 }
