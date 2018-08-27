@@ -1,28 +1,45 @@
 <template>
-  <div>
-    <form-helper>
-      <h2 slot="tytul">{{ tytul }}</h2>
-      <p slot="tekst">To jest paragraf dla 'slot'.</p>
-    </form-helper>
-  </div>
+    <div>
+        <form-helper>
+            <div slot="form-header">
+                <h3>To jest tytul formularza</h3>
+                <p>To kilka informacji o formularzu</p>
+            </div>
+            <div slot="form-fields">
+                <input type="text" placeholder="nazwa" required />
+                <input type="password" placeholder="haslo" required />
+            </div>
+            <div slot="form-controls">
+                <button v-on:click="przeslijZgloszenie">Prześlij</button>
+            </div>
+        </form-helper>
+    </div>
 </template>
 
 <script>
+// Imports
 import formHelper from './components/formHelper.vue'
 
-
 export default {
-  components: {
-    'formHelper': formHelper
-  },
-  data () {
-    return {
-          tytul: 'To jest dynamiczny tytul dla "slot"'
+    components: {
+        'form-helper': formHelper
+    },
+    data () {
+        return {
+
+        }
+    },
+    methods: {
+        przeslijZgloszenie: function(){
+            alert('dziękujemy  za przesłanie');
+        }
     }
-  }
 }
 </script>
 
-<style scoped>
-
+<style>
+body{
+    margin: 0;
+    font-family: 'Nunito SemiBold';
+}
 </style>
