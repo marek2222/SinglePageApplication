@@ -1,32 +1,23 @@
 <template>
     <div>
-        <keep-alive>
-            <component v-bind:is="component"></component>
-        </keep-alive>
-        <button @click="component = 'form-pierwszy'">Pokaż fomularz pierwszy</button>
-        <button @click="component = 'form-drugi'">Pokaż fomularz drugi</button>
+        <add-blog></add-blog>
     </div>
 </template>
 
 <script>
-// Imports
-import formOne from './components/formOne.vue';
-import formTwo from './components/formTwo.vue';
+import addBlog from './components/addBlog.vue';
 
 export default {
     components: {
-        'form-pierwszy': formOne,
-        'form-drugi': formTwo
+        'add-blog': addBlog
     },
     data () {
         return {
-            component: 'form-pierwszy'
+
         }
     },
     methods: {
-        przeslijZgloszenie: function(){
-            alert('Dziekujemy za przesłanie...');
-        }
+
     }
 }
 </script>
