@@ -1,6 +1,6 @@
 <template>
     <div>
-    <h1>Praszę wypełnij formularz...</h1>
+    <h1>Proszę wypełnić formularz...</h1>
         <form>
             <div id="form-header">
                 <slot name="form-header"></slot>

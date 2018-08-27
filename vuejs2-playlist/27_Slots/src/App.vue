@@ -1,37 +1,31 @@
 <template>
     <div>
-        <form-helper>
-            <div slot="form-header">
-                <h3>To jest tytul formularza</h3>
-                <p>To kilka informacji o formularzu</p>
-            </div>
-            <div slot="form-fields">
-                <input type="text" placeholder="nazwa" required />
-                <input type="password" placeholder="haslo" required />
-            </div>
-            <div slot="form-controls">
-                <button v-on:click="przeslijZgloszenie">Prześlij</button>
-            </div>
-        </form-helper>
+        <keep-alive>
+            <component v-bind:is="component"></component>
+        </keep-alive>
+        <button @click="component = 'form-pierwszy'">Pokaż fomularz pierwszy</button>
+        <button @click="component = 'form-drugi'">Pokaż fomularz drugi</button>
     </div>
 </template>
 
 <script>
 // Imports
-import formHelper from './components/formHelper.vue'
+import formOne from './components/formOne.vue';
+import formTwo from './components/formTwo.vue';
 
 export default {
     components: {
-        'form-helper': formHelper
+        'form-pierwszy': formOne,
+        'form-drugi': formTwo
     },
     data () {
         return {
-
+            component: 'form-pierwszy'
         }
     },
     methods: {
         przeslijZgloszenie: function(){
-            alert('dziękujemy  za przesłanie');
+            alert('Dziekujemy za przesłanie...');
         }
     }
 }
