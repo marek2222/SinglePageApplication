@@ -2,7 +2,7 @@
     <div id="osoby ">
         <!-- <p>{{ osoby }}</p> -->
         <ul>
-            <li v-for="osoba in osoby" @click="osoba.widocznosc =!  osoba.widocznosc">
+            <li v-for="osoba in osoby" v-bind:key="osoba.id"> @click="osoba.widocznosc =!  osoba.widocznosc">
                 <h2>{{ osoba.nazwa }}</h2>
                 <h3 v-show=" osoba.widocznosc">{{ osoba.specjalnosc }}</h3>
             </li>
