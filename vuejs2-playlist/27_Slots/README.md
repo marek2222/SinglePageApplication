@@ -5,6 +5,9 @@ cd 27_Slots
 npm install
 npm run dev
 
+// to install vue-resource
+npm install vue-resource --save
+
 ``` bash
 You will likely see some output in the terminal such as
 

@@ -1,7 +1,7 @@
 <template>
     <div id="dodajBlog">
         <h2>Dodaj nowy post na blogu</h2>
-        <form action="">
+        <form v-if="!przeslane">
             <label>Tytuł blogu</label>
             <input type="text" v-model.lazy="blog.tytul" required>
             <label>Zawartość blogu</label>
@@ -21,8 +21,12 @@
                 <option v-for="autor in autorzy" v-bind:key="autor.id">
                   {{ autor }}</option>
             </select>
+            <button @click.prevent="post">Add blog</button>
         </form>
 
+        <div v-if="przeslane">
+            <h3>Dziękujemy za dodanie twojego posta</h3>
+        </div>
         <div id="podglad">
           <h3>Podgląd bloga</h3>
           <p>Tytuł bloga: {{ blog.tytul }}</p>
@@ -50,11 +54,21 @@ export default {
                 kategorie: [],
                 autor: ""    //"Sieciowy Ninja" - można ustawić wartość domyślną
             },
-            autorzy: ['Sieciowy Ninja', 'Mściciel  Angulara', 'Obronca Vue']
+            autorzy: ['Sieciowy Ninja', 'Mściciel  Angulara', 'Obronca Vue'],
+            przeslane: false
         }
     },
     methods: {
-
+      post: function(){
+        this.$http.post('https://jsonplaceholder.typicode.com/posts', {
+          title: this.blog.tytul,
+          body: this.blog.zawartosc,
+          userId: 1
+        }).then( function(data){
+          console.log(data);
+          this.przeslane = true;
+        });
+      }
     }
 }
 </script>
