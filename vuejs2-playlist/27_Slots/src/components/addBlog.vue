@@ -16,7 +16,13 @@
                 <label>Ser</label>
                 <input type="checkbox" value="ser" v-model="blog.kategorie" />
             </div>
+            <label>Autor: </label>
+            <select v-model="blog.autor" >
+                <option v-for="autor in autorzy" v-bind:key="autor.id">
+                  {{ autor }}</option>
+            </select>
         </form>
+
         <div id="podglad">
           <h3>Podgląd bloga</h3>
           <p>Tytuł bloga: {{ blog.tytul }}</p>
@@ -28,6 +34,7 @@
                   {{ kategoria }}
               </li>
           </ul>
+          <p>Autor: {{ blog.autor }}</p>
         </div>
     </div>
 </template>
@@ -38,10 +45,12 @@ export default {
     data () {
         return {
             blog: {
-                tytul: '',
-                zawartosc: '',
-                kategorie: []
-            }
+                tytul: "",
+                zawartosc: "",
+                kategorie: [],
+                autor: ""    //"Sieciowy Ninja" - można ustawić wartość domyślną
+            },
+            autorzy: ['Sieciowy Ninja', 'Mściciel  Angulara', 'Obronca Vue']
         }
     },
     methods: {
