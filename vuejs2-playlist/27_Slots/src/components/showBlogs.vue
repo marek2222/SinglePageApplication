@@ -1,8 +1,8 @@
 <template>
-    <div id="show-blogs">
+    <div v-theme:column="'narrow'" id="show-blogs">
         <h1>Wszystkie artykuły bloga</h1>
         <div v-for="blog in blogi" v-bind:key="blog.id" class="single-blog">
-            <h2>{{ blog.title }}</h2>
+            <h2 v-rainbow>{{ blog.title }}</h2>
             <article>{{ blog.body }}</article>
         </div>
     </div>
@@ -35,6 +35,6 @@ export default {
     padding: 20px;
     margin: 20px 0;
     box-sizing: border-box;
-    background: #eee;
+    background: grey;
 }
 </style>
