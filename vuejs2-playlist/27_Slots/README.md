@@ -8,6 +8,11 @@ npm run dev
 // to install vue-resource
 npm install vue-resource --save
 
+// to install vue-router
+npm install vue-router --save
+
+
+
 ``` bash
 You will likely see some output in the terminal such as
 
