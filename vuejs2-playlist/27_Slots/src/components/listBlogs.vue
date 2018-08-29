@@ -1,10 +1,9 @@
 <template>
-    <div id="show-blogs">               <!-- v-theme:column="'narrow'"  -->
-        <h1>Wszystkie artykuły bloga</h1>
+    <div id="show-blogs">
+        <h1>Lista tytyłow bloga</h1>
         <input type="text" v-model="szukaj" placeholder="przeszukaj blogi">
         <div v-for="blog in filtrowaneBlogi" v-bind:key="blog.id" class="single-blog">
-            <h2 v-rainbow>{{ blog.title | toUppercase }}</h2>   <!-- <h2 v-rainbow>{{ blog.title | toUppercase }}  -->
-            <article>{{ blog.body }}</article>
+            <h2 >{{ blog.title }}</h2>
         </div>
     </div>
 </template>
@@ -28,6 +27,7 @@ export default {
         });
     },
     computed: {
+
     },
     //filters locally
     filters: {
