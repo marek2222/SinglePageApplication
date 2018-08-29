@@ -1,5 +1,6 @@
 <template>
     <div>
+        <naglowek-apl></naglowek-apl>
         <router-view></router-view>
     </div>
 </template>
@@ -9,13 +10,15 @@
 import addBlog      from './components/addBlog.vue';
 import showBlogs  from './components/showBlogs.vue';
 import listBlogs      from './components/listBlogs.vue';
+import naglowek    from './components/naglowek.vue';
 
 
 export default {
     components: {
         'add-blog':     addBlog,
         'show-blogs': showBlogs,
-        'list-blogs':     listBlogs
+        'list-blogs':     listBlogs,
+        'naglowek-apl': naglowek
     },
     data () {
         return {
