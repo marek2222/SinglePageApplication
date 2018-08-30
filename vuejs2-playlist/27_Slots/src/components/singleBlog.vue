@@ -1,8 +1,15 @@
 <template>
     <div id="single-blog">
-        <h1>{{ blog.title }}</h1>
-        <article>{{ blog.body }}</article>
-    </div>
+        <h1>{{ blog.tytul }}</h1>
+        <article>{{ blog.zawartosc }}</article>
+        <p>Autor: {{ blog.autor }}</p>
+        <ul>
+              <li v-for="kategoria in blog.kategorie" v-bind:key="kategoria.id">
+                  {{ kategoria }}
+              </li>
+        </ul>
+
+   </div>
 </template>
 
 <script>
@@ -15,10 +22,11 @@ export default {
         }
     },
     created() {
-        this.$http.get('http://jsonplaceholder.typicode.com/posts/'+ this.id
+        this.$http.get('https://vue-playlist-93dc3.firebaseio.com/posts/'+ this.id + '.json'
         ).then(function(data){
-            console.log(data);
-            this.blog = data.body;
+            return data.json();
+        }).then(function (data) {
+            this.blog = data;
         });
     }
 }

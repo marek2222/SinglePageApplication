@@ -3,8 +3,8 @@
         <h1>Wszystkie artykuły bloga</h1>
         <input type="text" v-model="szukaj" placeholder="przeszukaj blogi">
         <div v-for="blog in filtrowaneBlogi" v-bind:key="blog.id" class="single-blog">
-            <router-link  v-bind:to="'/blog/' + blog.id"><h2>{{ blog.title | toUppercase }}</h2></router-link>   <!-- <h2 v-rainbow>{{ blog.title | toUppercase }}  -->
-            <article>{{ blog.body }}</article>
+            <router-link  v-bind:to="'/blog/' + blog.id"><h2>{{ blog.tytul | toUppercase }}</h2></router-link>   <!-- <h2 v-rainbow>{{ blog.title | toUppercase }}  -->
+            <article>{{ blog.zawartosc }}</article>
         </div>
     </div>
 </template>
@@ -23,8 +23,16 @@ export default {
 
     },
     created() {
-        this.$http.get('http://jsonplaceholder.typicode.com/posts').then(function(data){
-            this.blogi = data.body.slice(0,10);
+        this.$http.get('https://vue-playlist-93dc3.firebaseio.com/posts.json').then(function(data){
+            //this.blogi = data.body.slice(0,10);
+            return data.json();
+        }).then(function (data) {
+            var  blogiArray = [];
+            for (let key in data){
+                data[key].id = key;
+                blogiArray.push(data[key]);
+            }
+            this.blogi = blogiArray;
         });
     },
     computed: {
