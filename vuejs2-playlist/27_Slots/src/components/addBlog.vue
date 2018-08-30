@@ -60,11 +60,8 @@ export default {
     },
     methods: {
       post: function(){
-        this.$http.post('https://jsonplaceholder.typicode.com/posts', {
-          title: this.blog.tytul,
-          body: this.blog.zawartosc,
-          userId: 1
-        }).then( function(data){
+        this.$http.post('https://vue-playlist-93dc3.firebaseio.com/posts.json', this.blog
+        ).then( function(data){
           console.log(data);
           this.przeslane = true;
         });
